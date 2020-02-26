@@ -3,16 +3,27 @@
 
 一、准备工作
 1.1. gitlab环境
+
 1.2. 装有docker和gitlab-runner环境的云服务器（这里用到CentOS 7 64位）
+
 1.3. 项目代码
+
 1.4. Dockerfile
+
 1.5. .gitlab-ci.yml
+
 二、环境配置
+
 2.1. 为项目注册执行部署任务的Runner服务器
+
 2.2. 云服务器注册runner
+
 三、提交更新并自动部署到服务器，测试地址：http://127.0.0.1:8001
+
 3.1. 提交代码到git golang分支
+
 3.2. 等待Job任务完成
+
 3.3 测试结果
 
 
@@ -79,12 +90,18 @@ docker-deploy:
 ![img](./imgs/WX20200226-163135@2x.png)
 
 2. 将runner机器与gitlab的cicd链接并打通
-> 查看地址和
-![img](./imgs/WWX20200226-163220@2x.png)
+> 查看地址和gitlab-ci的token
+
+![img](./imgs/WX20200226-163220@2x.png)
+
 > 在runner机器上设置
+`实际就是runner要向gitlab服务发起register`
+>> https://docs.gitlab.com/runner/register/index.html
+
 ![img](./imgs/WX20200226-161907@2x.png)
  
 > 补充：
+
 ```
 sudo groupadd docker     #添加docker用户组
 sudo gpasswd -a gitlab-runner docker     #将登陆用户加入到docker用户组中
@@ -104,6 +121,12 @@ runner注册成功后，通过git命令提交更新到golang分支，只要golan
 最后，通过链接 `http://127.0.0.1:8001/hello` 可以看到服务器已经部署代码并且可以正常访问了
 ![img](./imgs/WX20200226-163906@2x.png)
 
+> 补充： docker 部署gitlab服务
 
+```
+docker pull beginor/gitlab-ce:11.3.0-ce.0
+
+docker run --detach --publish 8443:443 --publish 8880:80 --publish 8822:22 --name my-gitlab --restart unless-stopped --volume /Users/ys/svn_git/05Docker_workspace/gitlab/etc:/etc/gitlab --volume /Users/ys/svn_git/05Docker_workspace/gitlab/log:/var/log/gitlab --volume /Users/ys/svn_git/05Docker_workspace/gitlab/data:/var/opt/gitlab --privileged=true -d beginor/gitlab-ce:11.3.0-ce.0
+```
 
 
