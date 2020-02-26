@@ -16,7 +16,7 @@
 
 2.1. 为项目注册执行部署任务的Runner服务器
 
-2.2. 云服务器注册runner
+2.2. 将runner机器与gitlab的cicd链接并注册打通
 
 三、提交更新并自动部署到服务器，测试地址：http://127.0.0.1:8001
 
@@ -89,7 +89,7 @@ docker-deploy:
 因为我已经配置过了，所以下面面有runner，runner的标签是多runner执行任务时区分的标识，后面部署过程我会使用标签为 `mbp13`服务器来执行`job`，下面会截图配置过程。
 ![img](./imgs/WX20200226-163135@2x.png)
 
-2. 将runner机器与gitlab的cicd链接并打通
+2. 将runner机器与gitlab的cicd链接并注册打通
 > 查看地址和gitlab-ci的token
 
 ![img](./imgs/WX20200226-163220@2x.png)
