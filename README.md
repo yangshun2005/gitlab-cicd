@@ -2,9 +2,10 @@
 `快速掌握并使用gitlab-ci工具快速代码编译、集成和发布`
 
 一、准备工作
+
 1.1. gitlab环境
 
-1.2. 装有docker和gitlab-runner环境的云服务器（这里用到CentOS 7 64位）
+1.2. 装有`docker`和`gitlab-runner`环境的云服务器（Linux或类unix机器）
 
 1.3. 项目代码
 
@@ -129,4 +130,14 @@ docker pull beginor/gitlab-ce:11.3.0-ce.0
 docker run --detach --publish 8443:443 --publish 8880:80 --publish 8822:22 --name my-gitlab --restart unless-stopped --volume /Users/ys/svn_git/05Docker_workspace/gitlab/etc:/etc/gitlab --volume /Users/ys/svn_git/05Docker_workspace/gitlab/log:/var/log/gitlab --volume /Users/ys/svn_git/05Docker_workspace/gitlab/data:/var/opt/gitlab --privileged=true -d beginor/gitlab-ce:11.3.0-ce.0
 ```
 
+> 注意：
+
+```
+预备知识：
+    docker命令使用
+    git命令使用
+    gitlab的使用
+    gitlab-ci.yml的编写
+    使用一种开发语言，本处使用golang举例
+```
 
