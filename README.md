@@ -1,23 +1,25 @@
 ### gitlab-cicd
 `快速掌握并使用gitlab-ci工具快速代码编译、集成和发布`
 
+[课程学习源码和文档](https://github.com/yangshun2005/gitlab-cicd)
+
 一、准备工作
 
-1.1. gitlab环境
+1.1. gitlab环境：代码仓库和编译器
 
-1.2. 装有`docker`和`gitlab-runner`环境的云服务器（Linux或类unix机器）
+1.2. 目标机：装有`docker`和`gitlab-runner`环境的服务器（Linux或类unix机器）
 
-1.3. 项目代码
+1.3. 项目代码：testgolang为例（gitlab官网仓库）
 
-1.4. Dockerfile
+1.4. Dockerfile：对程序编译后打镜像
 
-1.5. .gitlab-ci.yml
+1.5. .gitlab-ci.yml ：CI/CD的gitlab机器运行逻辑的操作文档
 
 二、环境配置
 
-2.1. 为项目注册执行部署任务的Runner服务器
+2.1. 准备一台，为项目注册执行部署任务的Runner服务器
 
-2.2. 将runner机器与gitlab的cicd链接并注册打通
+2.2. 将runner机器与gitlab的cicd`注册`,完成链接并打通
 
 三、提交更新并自动部署到服务器，测试地址：http://127.0.0.1:8001
 
@@ -137,7 +139,7 @@ docker run --detach --publish 8443:443 --publish 8880:80 --publish 8822:22 --nam
     docker命令使用
     git命令使用
     gitlab的使用
-    gitlab-ci.yml的编写
+    .gitlab-ci.yml的编写
     使用一种开发语言，本处使用golang举例
 ```
 
