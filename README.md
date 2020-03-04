@@ -3,6 +3,8 @@
 
 [课程学习源码和文档](https://github.com/yangshun2005/gitlab-cicd)
 
+[学习视频地址](https://www.bilibili.com/video/av92022124/)
+
 一、准备工作
 
 1.1. gitlab环境：代码仓库和编译器
