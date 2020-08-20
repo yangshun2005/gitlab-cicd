@@ -120,7 +120,8 @@ runner注册成功后，通过git命令提交更新到golang分支，只要golan
 > git push 代码到`golang分支`, gitlab-ci的功能自动扫描`.gitlai-ci.yml`文件，并启动
 ![img](./imgs/WX20200226-163625@2x.png)
 > 最终的执行结果gitlab的CI/CD菜单里的`jobs`里呈现
-![img](./imgs/WWX20200226-163830@2x.png)
+![img](./imgs/WX20200226-163830@2x.png)
+
 
 ### 四、访问
 最后，通过链接 `http://127.0.0.1:8001/hello` 可以看到服务器已经部署代码并且可以正常访问了
